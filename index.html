@@ -1,0 +1,20 @@
+<head>
+    <title>Barcode Generator</title>
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.5.8/barcodes/JsBarcode.code128.min.js"></script>
+</head>
+
+<body>
+    <input id="in"></input>
+    <button onclick="gen()">Generate</button>
+
+    <svg id="code128" style="display: none"></svg>
+
+    <script>
+        function gen() {
+            num = document.getElementById("in").value
+            JsBarcode("#code128", num);
+            document.getElementById("code128").style.display = "inherit"
+                // document.getElementById("in").style.display = "none"
+        }
+    </script>
+</body>
