@@ -23,14 +23,15 @@
 </head>
 
 <body>
-    <input id="in"></input>
+    <input id="in" type="number"></input>
     <button onclick="gen()">Generate</button>
 
     <svg id="code128" style="display: none"></svg>
 
     <script>
         function gen() {
-            num = document.getElementById("in").value
+            num = "00000" + document.getElementById("in").value
+            num = num.substr(-8);
             JsBarcode("#code128", num);
             document.getElementById("code128").style.display = "inherit"
                 // document.getElementById("in").style.display = "none"
